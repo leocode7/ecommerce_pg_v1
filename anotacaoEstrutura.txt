@@ -1,0 +1,137 @@
+src/
+│
+├── app/
+│   │
+│   ├── (store)/
+│   │   ├── page.tsx
+│   │   │
+│   │   ├── produtos/
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── categorias/
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── carrinho/
+│   │   │   └── page.tsx
+│   │   │
+│   │   └── checkout/
+│   │       └── page.tsx
+│   │
+│   ├── (auth)/
+│   │   ├── login/
+│   │   │   └── page.tsx
+│   │   └── cadastro/
+│   │       └── page.tsx
+│   │
+│   ├── (account)/
+│   │   ├── minha-conta/
+│   │   │   └── page.tsx
+│   │   └── pedidos/
+│   │       ├── page.tsx
+│   │       └── [id]/
+│   │           └── page.tsx
+│   │
+│   ├── admin/
+│   │   ├── page.tsx
+│   │   ├── produtos/
+│   │   │   ├── page.tsx
+│   │   │   ├── novo/
+│   │   │   │   └── page.tsx
+│   │   │   └── [id]/
+│   │   │       └── editar/
+│   │   │           └── page.tsx
+│   │   ├── categorias/
+│   │   └── pedidos/
+│   │
+│   ├── api/
+│   │   └── webhooks/
+│   │       └── mercado-pago/
+│   │           └── route.ts
+│   │
+│   ├── layout.tsx
+│   └── globals.scss
+│
+├── actions/
+│   ├── produto.actions.ts
+│   ├── categoria.actions.ts
+│   ├── pedido.actions.ts
+│   ├── carrinho.actions.ts
+│   └── usuario.actions.ts
+│
+├── services/
+│   ├── produto.service.ts
+│   ├── categoria.service.ts
+│   ├── pedido.service.ts
+│   ├── carrinho.service.ts
+│   ├── pagamento.service.ts
+│   └── estoque.service.ts
+│
+├── repositories/
+│   ├── produto.repository.ts
+│   ├── categoria.repository.ts
+│   ├── pedido.repository.ts
+│   ├── carrinho.repository.ts
+│   ├── usuario.repository.ts
+│   └── estoque.repository.ts
+│
+├── schemas/
+│   ├── produto.schema.ts
+│   ├── categoria.schema.ts
+│   ├── pedido.schema.ts
+│   ├── checkout.schema.ts
+│   └── usuario.schema.ts
+│
+├── integrations/
+│   ├── mercado-pago/
+│   │   ├── client.ts
+│   │   └── pagamento.ts
+│   │
+│   └── cloudinary/
+│       └── client.ts
+│
+├── components/
+│   ├── ui/
+│   │   ├── Button/
+│   │   ├── Input/
+│   │   ├── Modal/
+│   │   └── ...
+│   │
+│   ├── layout/
+│   │   ├── Header/
+│   │   ├── Footer/
+│   │   └── Navbar/
+│   │
+│   ├── produto/
+│   │   ├── ProdutoCard/
+│   │   ├── ProdutoForm/
+│   │   └── ProdutoList/
+│   │
+│   ├── carrinho/
+│   ├── checkout/
+│   └── pedido/
+│
+├── contexts/
+│   └── carrinho.context.tsx
+│
+├── hooks/
+│   ├── useCarrinho.ts
+│   └── ...
+│
+├── lib/
+│   ├── prisma.ts
+│   ├── auth.ts
+│   └── utils.ts
+│
+├── types/
+│   └── ...
+│
+└── styles/
+    ├── _variables.scss
+    ├── _mixins.scss
+    └── _breakpoints.scss
+
+prisma/
+└── schema.prisma
