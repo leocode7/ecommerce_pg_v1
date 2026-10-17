@@ -27,3 +27,7 @@ services:
 Ao digitar algo no terminal, ele fica gravado no log do terminal e pode ser vizualizado através do $history.
 Para não registrar no log do terminal, só digitar um espaço antes de iniciar a digitar o comando.
 Apagar tudo do history: $history -c && history -w
+
+---- JEST --------------------
+I nstalar: $
+npm install --save-dev @jest/globals
