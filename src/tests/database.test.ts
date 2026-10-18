@@ -1,8 +1,10 @@
+import database from '../infra/database';
 import {expect, test} from 'vitest';
-import database from "../infra/database";
 
-const result = database.query('SELECT 1 + 1;');
+const result = await database.query('SELECT 1 + 1 as sum;');
+const resultConvertidoParaNumber = Number(result?.rows[0]['sum']);
+
 
 test('database deve retornar 2', () => {
-  expect(2).toBe(2);
+  expect(resultConvertidoParaNumber).toBe(2);
 });
