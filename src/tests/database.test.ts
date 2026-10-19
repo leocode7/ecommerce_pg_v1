@@ -1,10 +1,8 @@
-import database from '../infra/database';
 import {expect, test} from 'vitest';
 
-const result = await database.query('SELECT 1 + 1 as sum;');
-const resultConvertidoParaNumber = Number(result?.rows[0]['sum']);
+const response = await fetch('http://localhost:3000/api/health/database');
+console.log(response);
 
-
-test('database deve retornar 2', () => {
-  expect(resultConvertidoParaNumber).toBe(2);
+test('status deve retornar 200', () => {
+  expect(response.status).toBe(200);
 });
