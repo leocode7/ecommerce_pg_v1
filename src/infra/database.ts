@@ -1,28 +1,32 @@
-import { Client } from 'pg';
+import { Pool } from 'pg';
 
 
 class Database {
-  async query(queryObject: string) {
-    const client = await new Client({
-      host: process.env.POSTGRES_HOST,
-      port: Number(process.env.POSTGRES_PORT),
-      user: process.env.POSTGRES_USER,
-      database: process.env.POSTGRES_DB,
-      password: process.env.POSTGRES_PASSWORD,
-    }).connect();
+  private pool = new Pool({
+    host: process.env.POSTGRES_HOST,
+    port: Number(process.env.POSTGRES_PORT),
+    user: process.env.POSTGRES_USER,
+    database: process.env.POSTGRES_DB,
+    password: process.env.POSTGRES_PASSWORD,
+    max: 20,
+  });
 
+  async query(queryObject: string) {
     try {
-      const result = await client.query(queryObject);
+      const result = await this.pool.query(queryObject);
       console.log(result);
       return result;
     } catch (err) {
       console.error(err);
-    } finally {
-      await client.end();
-    }
+      throw err;
+    } 
   }
 
-}
+  getTotalCount() {
+    return this.pool.totalCount;
+  }
+  
+} // Fim da classe
 
 const database = new Database();
 export default database;
