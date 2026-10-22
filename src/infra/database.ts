@@ -8,7 +8,6 @@ class Database {
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
-    max: 20,
   });
 
   async query(queryObject: string) {
