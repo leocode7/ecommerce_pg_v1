@@ -1,6 +1,11 @@
 import { Pool } from 'pg';
 
 
+type QueryObject = {
+  text: string;
+  values?: any[]
+}
+
 class Database {
   private pool = new Pool({
     host: process.env.POSTGRES_HOST,
@@ -10,7 +15,7 @@ class Database {
     password: process.env.POSTGRES_PASSWORD,
   });
 
-  async query(queryObject: string) {
+  async query(queryObject: QueryObject) {
     try {
       const result = await this.pool.query(queryObject);
       console.log(result);
