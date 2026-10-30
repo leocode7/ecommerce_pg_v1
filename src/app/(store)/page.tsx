@@ -1,9 +1,6 @@
 import database from "@/infra/database";
 
 export default async function Home() {
-  const result = await database.query("SELECT 1 + 1 as sum;");
-  console.log(result?.rows);
-  //[0]['sum']
   return (
     <div>
       <main>

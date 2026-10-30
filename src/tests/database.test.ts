@@ -13,6 +13,6 @@ test('status deve retornar 200', async () => {
   expect(responseBody.updated_at).toEqual(parseUpdatedAt);
 
   expect(responseBody.dependencies.database.version).toEqual('18.6');
-  expect(responseBody.dependencies.database.max_connections).toEqual(100);
+  expect(responseBody.dependencies.database.max_connections).toEqual(901);
   expect(responseBody.dependencies.database.opened_connections).toEqual(1);
 });

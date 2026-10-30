@@ -3,11 +3,9 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    await database.query({text: "SELECT 1;"});
+    await database.query({ text: "SELECT 1;" });
 
     const updateAt = new Date().toISOString();
-
-    const totalDeClientesNoPool = database.getTotalCount();
 
     const databaseVersionResult = await database.query({ text: 'SHOW server_version;' });
     const databaseVersionValue = databaseVersionResult.rows[0].server_version;
@@ -31,15 +29,13 @@ export async function GET() {
           opened_connections: databaseOpenedConnectionsValue,
         }
       },
-      total_count: totalDeClientesNoPool,
     }, {
       status: 200,
     });
   } catch {
     return NextResponse.json({
       status: 503,
-    }
-    );
+    });
 
   }
 }

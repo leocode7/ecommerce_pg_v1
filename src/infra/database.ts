@@ -13,6 +13,7 @@ class Database {
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
+    ssl: process.env.NODE_ENV === 'development'? false : true,
   });
 
   async query(queryObject: QueryObject) {
@@ -24,12 +25,7 @@ class Database {
       console.error(err);
       throw err;
     } 
-  }
-
-  getTotalCount() {
-    return this.pool.totalCount;
-  }
-  
+  }  
 } // Fim da classe
 
 const database = new Database();
