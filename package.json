@@ -9,10 +9,14 @@
     "services:down": "docker compose -f src/infra/compose.yaml down",
     "build": "next build",
     "start": "next start",
-    "test": "vitest"
+    "test": "vitest",
+    "migration:create": "node-pg-migrate --migrations-dir src/infra/migrations create --migration-file-language ts",
+    "migration:up": "node-pg-migrate --migrations-dir src/infra/migrations --envPath .env.development up"
   },
   "dependencies": {
+    "dotenv": "^18.0.9",
     "next": "16.3.8",
+    "node-pg-migrate": "^9.0.0",
     "pg": "^8.23.1",
     "react": "19.2.8",
     "react-dom": "19.2.8"
