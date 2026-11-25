@@ -1,4 +1,7 @@
 import {expect, test} from 'vitest';
+import database from '@/infra/database';
+
+database.query({text: 'SELECT 1 + 1;'});
 
 
 test('GET to /api/v1/migrations should return 200', async () => {
