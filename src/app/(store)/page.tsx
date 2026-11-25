@@ -1,5 +1,3 @@
-import database from "@/infra/database";
-
 export default async function Home() {
   return (
     <div>

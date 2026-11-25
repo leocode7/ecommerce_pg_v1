@@ -1,0 +1,1 @@
+Um agente de IA para programar, como o Codex, recebe uma tarefa e usa um modelo de linguagem para entender o pedido. Ele pode consultar arquivos, usar ferramentas como o terminal, editar o código e verificar o resultado. As instruções e o contexto do projeto ajudam o agente a trabalhar de forma adequada.

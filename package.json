@@ -9,7 +9,7 @@
     "services:down": "docker compose -f src/infra/compose.yaml down",
     "build": "next build",
     "start": "next start",
-    "test": "vitest",
+    "test": "vitest --watch",
     "migration:create": "node-pg-migrate --migrations-dir src/infra/migrations create --migration-file-language ts",
     "migration:up": "node-pg-migrate --migrations-dir src/infra/migrations --envPath .env.development up"
   },
@@ -22,12 +22,17 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
     "@types/node": "^24",
     "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.3.0",
     "babel-plugin-react-compiler": "^1.0.0",
+    "jsdom": "^31.0.1",
     "typescript": "^5",
-    "vitest": "^5.0.5"
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^5.1.1"
   }
 }

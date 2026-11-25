@@ -12,8 +12,8 @@ class Database {
     port: Number(process.env.POSTGRES_PORT),
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DB,
-    password: process.env.POSTGRES_PASSWORD,
-    ssl: process.env.NODE_ENV === 'development'? false : true,
+    password: String(process.env.POSTGRES_PASSWORD),
+    ssl: process.env.NODE_ENV === 'production' ? true : false,
   });
 
   async query(queryObject: QueryObject) {
